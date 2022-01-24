@@ -79,10 +79,23 @@ mj_getElementById_genera.addEventListener("click",
             document.getElementById("codice_cp").innerHTML = codice_cp;
             document.getElementById("prezzo").innerHTML = prezzoBiglietto + " €";
 
+            // Aggiungo classe nella lista delle classi del <div> che contiene il biglietto con il prezzo calcolato
+            let nascosto = document.querySelector(".hidden");
+            nascosto.classList.add("d-block");
+
         } 
         //else con check == 0 non necessario perchè sarebbero già comparsi dei alert precedenti
+    }
+
+);
 
 
+let mj_getElementById_annulla = document.getElementById("annulla");
+
+mj_getElementById_annulla.addEventListener("click",
+
+    function(){
+        
     }
 
 );
