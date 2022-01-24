@@ -23,18 +23,18 @@
             <div class="contenuto">
 
                 <form class="m-4 fw-bold d-flex flex-column align-items-center">
-                    <label for="">Nome e Cognome</label>
-                    <input type="text" id="nome" placeholder="Inserisci Nome e Cognome">
+                    <label for="identita">Nome e Cognome</label>
+                    <input type="text" name ="identita" id="nome" autocomplete="on" placeholder="Inserisci Nome e Cognome">
                 </form>
     
                 <form class="m-4 fw-bold d-flex flex-column align-items-center">
-                    <label for="">Km da percorrere</label>
-                    <input type="text" id="km" placeholder="Inserisci km da percorrere">
+                    <label for="km">Km da percorrere</label>
+                    <input type="number" name="km" step="5" id="km" autocomplete="on" placeholder="Inserisci km da percorrere">
                 </form>
     
                 <form class="m-4 fw-bold d-flex flex-column align-items-center">
-                    <label for="">Fascia d'età</label>
-                    <select id="eta">
+                    <label for="eta">Fascia d'età</label>
+                    <select id="eta" name="eta">
                         <option value="">Inserisci età</option>
                         <option value="minorenne">Minorenne</option>
                         <option value="maggiorenne">Maggiorenne</option>
