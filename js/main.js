@@ -1,6 +1,10 @@
 let mj_getElementById_nome = document.getElementById("nome");
 let identita = mj_getElementById_nome.value;
 
+let mj_getElementById_km = "";
+
+let mj_getElementById_eta = "";
+
 let mj_getElementById_genera = document.getElementById("genera");
 
 mj_getElementById_genera.addEventListener("click",
@@ -9,9 +13,7 @@ mj_getElementById_genera.addEventListener("click",
         
         let check = null; //check vale 1 se il controllo è ok, 0 altrimenti
 
-       
-
-        let mj_getElementById_km = document.getElementById("km");
+        mj_getElementById_km = document.getElementById("km");
         let km = mj_getElementById_km.value;
             // controllo se i km inseriti sono validi
                 km = parseInt(km);
@@ -23,11 +25,10 @@ mj_getElementById_genera.addEventListener("click",
                 }
             // 
 
-        
         let eta = null;
         if (check == 1){
 
-            let mj_getElementById_eta = document.getElementById("eta");
+            mj_getElementById_eta = document.getElementById("eta");
             eta = mj_getElementById_eta.value;
 
             console.log(eta);
@@ -95,7 +96,13 @@ let mj_getElementById_annulla = document.getElementById("annulla");
 mj_getElementById_annulla.addEventListener("click",
 
     function(){
-       
+        mj_getElementById_nome.value = "";
+        mj_getElementById_km.value = "";
+        mj_getElementById_eta.value = "";
+
+        // Aggiungo classe nella lista delle classi del <div> che contiene il biglietto con il prezzo calcolato
+        let nascosto = document.querySelector(".hidden");
+        nascosto.classList.add("d-none");
     }
 
 );
