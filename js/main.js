@@ -1,9 +1,8 @@
 let mj_getElementById_nome = document.getElementById("nome");
-let identita = mj_getElementById_nome.value;
 
-let mj_getElementById_km = "";
+let mj_getElementById_km = document.getElementById("km");
 
-let mj_getElementById_eta = "";
+let mj_getElementById_eta = document.getElementById("eta");
 
 let mj_getElementById_genera = document.getElementById("genera");
 
@@ -13,36 +12,33 @@ mj_getElementById_genera.addEventListener("click",
         
         let check = null; //check vale 1 se il controllo è ok, 0 altrimenti
 
-        mj_getElementById_km = document.getElementById("km");
+        let identita = mj_getElementById_nome.value;
+       
         let km = mj_getElementById_km.value;
             // controllo se i km inseriti sono validi
                 km = parseInt(km);
                 if(isNaN(km)){
                     check = 0;
-                    alert(`I km inseriti non sono validi, inserito carattere !!!`);
+                    alert(`I km inseriti non sono validi !!!`);
                 }else{
                     check = 1;
                 }
             // 
 
-        let eta = null;
+        let eta = mj_getElementById_eta.value;
         if (check == 1){
-
-            mj_getElementById_eta = document.getElementById("eta");
-            eta = mj_getElementById_eta.value;
-
-            console.log(eta);
-                //controllo se età inserità è corretta
-                if(eta == "minorenne" || eta == "maggiorenne" || eta == "over_65"){
-                    check = 1;
-                }else{
-                    check = 0;
-                    alert("L'età inserita non è accettata. Errore !!!");
-                }
+            
+            //controllo se età inserità è corretta
+            if(eta == "minorenne" || eta == "maggiorenne" || eta == "over_65"){
+                check = 1;
+            }else{
+                check = 0;
+                alert("L'età inserita non è accettata. Errore !!!");
+            }
         }
 
         if(check == 1){
-            console.log(`È stata preso in carica il calcolo del biglietto di ${mj_getElementById_nome.value} di età ${eta} per percorrere ${km} km`);
+            console.log(`È stata preso in carica il calcolo del biglietto di ${identita} di età ${mj_getElementById_eta.value} per percorrere ${km} km`);
         
             // Definisco prezzo al km
             const PREZZO = 0.21;
@@ -71,7 +67,7 @@ mj_getElementById_genera.addEventListener("click",
             }
 
             let carrozza = Math.floor(Math.random()*9)+1;
-            let codice_cp = Math.floor(Math.random()*9999)+90000;
+            let codice_cp = Math.floor(Math.random()*9999)+90001;
 
 
             // append dei dati
