@@ -102,7 +102,7 @@ mj_getElementById_annulla.addEventListener("click",
 
         // Aggiungo classe nella lista delle classi del <div> che contiene il biglietto con il prezzo calcolato
         let nascosto = document.querySelector(".hidden");
-        nascosto.classList.add("d-none");
+        nascosto.classList.remove("d-block");
     }
 
 );
