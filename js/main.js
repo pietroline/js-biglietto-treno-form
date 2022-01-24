@@ -1,3 +1,5 @@
+let mj_getElementById_nome = document.getElementById("nome");
+let identita = mj_getElementById_nome.value;
 
 let mj_getElementById_genera = document.getElementById("genera");
 
@@ -7,8 +9,7 @@ mj_getElementById_genera.addEventListener("click",
         
         let check = null; //check vale 1 se il controllo è ok, 0 altrimenti
 
-        let mj_getElementById_nome = document.getElementById("nome");
-        let identita = mj_getElementById_nome.value;
+       
 
         let mj_getElementById_km = document.getElementById("km");
         let km = mj_getElementById_km.value;
@@ -82,7 +83,6 @@ mj_getElementById_genera.addEventListener("click",
             // Aggiungo classe nella lista delle classi del <div> che contiene il biglietto con il prezzo calcolato
             let nascosto = document.querySelector(".hidden");
             nascosto.classList.add("d-block");
-
         } 
         //else con check == 0 non necessario perchè sarebbero già comparsi dei alert precedenti
     }
@@ -95,7 +95,7 @@ let mj_getElementById_annulla = document.getElementById("annulla");
 mj_getElementById_annulla.addEventListener("click",
 
     function(){
-        
+       
     }
 
 );
