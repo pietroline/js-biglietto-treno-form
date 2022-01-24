@@ -8,6 +8,7 @@ mj_getElementById_genera.addEventListener("click",
         let check = null; //check vale 1 se il controllo è ok, 0 altrimenti
 
         let mj_getElementById_nome = document.getElementById("nome");
+        let identita = mj_getElementById_nome.value;
 
         let mj_getElementById_km = document.getElementById("km");
         let km = mj_getElementById_km.value;
@@ -45,6 +46,7 @@ mj_getElementById_genera.addEventListener("click",
             const PREZZO = 0.21;
 
             // Calcolo prezzo biglietto
+            let tipo_biglietto = "Biglietto Standard";
             let prezzoBiglietto = km * PREZZO;
             prezzoBiglietto = prezzoBiglietto.toFixed(2);
             
@@ -54,15 +56,29 @@ mj_getElementById_genera.addEventListener("click",
             if(eta == "minorenne"){
                 prezzoBiglietto = prezzoBiglietto - ((prezzoBiglietto) * 20) / 100;
                 prezzoBiglietto = prezzoBiglietto.toFixed(2);
+                tipo_biglietto = "Biglietto Sconto 20%";
                 
                 console.log(`Il passeggero è minorenne, applico sconto 20%, totale scontato: ${prezzoBiglietto}`);
             
             } else if(eta == "over_65"){
                 prezzoBiglietto = prezzoBiglietto - ((prezzoBiglietto) * 40) / 100;
                 prezzoBiglietto = prezzoBiglietto.toFixed(2);
-               
+                tipo_biglietto = "Biglietto Sconto 40%";
+
                 console.log(`Il passeggero ha più di 65 anni, applico sconto 40%, totale scontato: ${prezzoBiglietto}`);
             }
+
+            let carrozza = Math.floor(Math.random()*9)+1;
+            let codice_cp = Math.floor(Math.random()*9999)+90000;
+
+
+            // append dei dati
+            document.getElementById("identita").innerHTML = identita;
+            document.getElementById("tipo_biglietto").innerHTML = tipo_biglietto;
+            document.getElementById("carrozza").innerHTML = carrozza;
+            document.getElementById("codice_cp").innerHTML = codice_cp;
+            document.getElementById("prezzo").innerHTML = prezzoBiglietto + " €";
+
         } 
         //else con check == 0 non necessario perchè sarebbero già comparsi dei alert precedenti
 
