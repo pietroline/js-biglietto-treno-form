@@ -67,7 +67,7 @@ mj_getElementById_genera.addEventListener("click",
             }
 
             let carrozza = Math.floor(Math.random()*9)+1;
-            let codice_cp = Math.floor(Math.random()*9999)+90001;
+            let codice_cp = Math.floor(Math.random()*10000)+90000s;
 
 
             // append dei dati
